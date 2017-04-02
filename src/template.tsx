@@ -48,7 +48,7 @@ class JSLinkDemo {
         // Get the target element
         let el = document.querySelector("#" + this.id + "_" + ctx.wpq);
         if(el) {
-            // Render the risk score table
+            // Render the list view
             render(<ListView data={ctx.ListData.Row} wpId={ctx.wpq} />, el);
             return "";
         }
@@ -68,7 +68,7 @@ class JSLinkDemo {
             // Execute the request
             .executeAndWait();
 
-        // Determine if this list is targeting the risk score
+        // Determine if this list is targeting this library
         if(view.JSLink.toLowerCase().indexOf("jslink_" + this.id + ".js") < 0) {
             // Render the default header
             return RenderHeaderTemplate(ctx);

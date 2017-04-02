@@ -27801,7 +27801,7 @@ var JSLinkDemo = (function () {
             // Get the target element
             var el = document.querySelector("#" + _this.id + "_" + ctx.wpq);
             if (el) {
-                // Render the risk score table
+                // Render the list view
                 react_dom_1.render(React.createElement(listView_1.ListView, { data: ctx.ListData.Row, wpId: ctx.wpq }), el);
                 return "";
             }
@@ -27816,7 +27816,7 @@ var JSLinkDemo = (function () {
             var view = (new gd_sprest_1.List(ctx.ListTitle))
                 .Views(ctx.view)
                 .executeAndWait();
-            // Determine if this list is targeting the risk score
+            // Determine if this list is targeting this library
             if (view.JSLink.toLowerCase().indexOf("jslink_" + _this.id + ".js") < 0) {
                 // Render the default header
                 return RenderHeaderTemplate(ctx);
