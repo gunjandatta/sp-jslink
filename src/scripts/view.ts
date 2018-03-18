@@ -1,10 +1,7 @@
-import {
-    List,
-    Types
-} from "gd-sprest";
+import { List } from "gd-sprest";
 
 /**
- * View Helper
+ * Configuration
  */
 export class ViewHelper {
     /**
@@ -12,8 +9,8 @@ export class ViewHelper {
      * @param listName - The list name to update.
      * @param viewName - The view name to update.
      */
-    clearJSLink(listName:string, viewName:string) {
-        // Clear the jslink
+    clearJSLink(listName: string, viewName: string) {
+        // Uninstall the JSL
         return this.setJSLink(listName, viewName, "");
     }
 
@@ -23,7 +20,7 @@ export class ViewHelper {
      * @param viewName - The view name to update.
      * @param jsLinkUrl - The JSLink property value.
      */
-    setJSLink(listName:string, viewName:string, jsLinkUrl:string) {
+    setJSLink(listName: string, viewName: string, jsLinkUrl: string) {
         // Get the list
         (new List(listName))
             // Get the views
@@ -31,9 +28,9 @@ export class ViewHelper {
             // Get the view
             .getByTitle(viewName)
             // Execute the request
-            .execute((view:Types.IView) => {
+            .execute((view) => {
                 // Ensure the view exists
-                if(view.existsFl) {
+                if (view.existsFl) {
                     // Update the JSLink property
                     view.update({
                         JSLink: jsLinkUrl

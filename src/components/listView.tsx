@@ -17,7 +17,7 @@ export class ListView extends React.Component<Props, any> {
         let rows = [];
 
         // Parse the data
-        for(let i=0; i<this.props.data.length; i++) {
+        for (let i = 0; i < this.props.data.length; i++) {
             let item = this.props.data[i];
 
             // Add the row
